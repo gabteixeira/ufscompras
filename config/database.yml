@@ -22,8 +22,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   username: postgres
-  password: ruby
- 
+
 development:
   <<: *default
   database: ufscompras_development
@@ -85,4 +84,3 @@ production:
   <<: *default
   database: ufscompras_production
   username: postgres
-  password: ruby

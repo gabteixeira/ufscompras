@@ -1,11 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'carrierwave', '~> 1.0'
-gem "custom_error_message" 
+gem "custom_error_message"
 gem 'acts_as_votable', '~> 0.12.0'
 gem 'devise'
 gem "wysiwyg-rails"
-gem 'rails', '~> 5.2.3'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 
