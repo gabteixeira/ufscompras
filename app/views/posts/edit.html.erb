@@ -1,0 +1,12 @@
+<%= render 'shared/navbar'%>
+<div class="container text-center" >
+
+<h1>Editando anúncio</h1>
+<div class="text-center"> <img alt="UFSCompra" class="rounded mx-auto d-block" style="width:600px" src="<%= asset_path 'ufscompra.png' %>"></div>
+<%= render 'form', post: @post %>
+
+<%= link_to 'Mostrar', @post %> |
+<%= link_to 'Voltar', posts_path %>
+</div>
+
+<%= render 'shared/footer'%>

@@ -1,0 +1,27 @@
+<%= render "shared/navbar"%>
+
+<div class="container h-100">
+  <div class="text-center">
+  <h2>Iniciar nova sessão</h2>
+   <img alt="UFSCompra" class="rounded mx-auto d-block" style="width:300px" src="<%= asset_path 'ufscompra.png' %>">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+    <div class="field">
+      <%= f.label :senha %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Entrar" %>
+    </div>
+  <% end %>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+  <%= render "devise/shared/links" %>
+  </div>
+</div>
+
+<%= render "shared/footer"%>

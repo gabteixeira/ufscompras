@@ -1,0 +1,18 @@
+<!-- navbar-fixed-top define que a barra está fixa no topo -->
+<nav class="navbar navbar-default navbar-static-top"> 
+<nav class="navbar navbar-default" style="background-color:black">
+  <div class="container-fluid">
+  <ul class="nav nav-pills nav-justified">
+  <div class="navbar-header">
+    </div>
+  <li role="presentation"><%=link_to 'Principal Principal', pages_index_path %></li>
+    <% if user_signed_in? %>
+        <li role="presentation"> <%= link_to 'Minha conta' %></li>
+        <li role="presentation"> <%= link_to 'Anúncios', newpost_path %></li>
+        <li> <%= link_to 'Logout', destroy_user_session_path,  :method => :delete %></li>
+    <% else %>
+       <li> <%= link_to 'Login', new_user_session_path %> </li>
+    <% end %>
+</ul>
+  </div>
+</nav>

@@ -1,0 +1,49 @@
+<%= render "shared/navbar"%>
+<div class="container text-center">
+  <h2>Cadastro</h2>
+ <img alt="UFSCompra" class="rounded mx-auto d-block" style="width:300px" src="<%= asset_path 'ufscompra.png' %>">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ra %><br />
+    <%= f.text_field :ra %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sobrenome %><br />
+    <%= f.text_field :sobrenome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :senha %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> caracteres no mínimo)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :confirme_a_senha %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Cadastrar" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>
+<%= render "shared/footer"%>

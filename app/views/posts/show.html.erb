@@ -1,0 +1,18 @@
+<%=render 'shared/navbar'%>
+<div class='container text-center'>
+<p id="notice"><%= notice %></p>
+
+<h1><%= @post.titulo %> </h1>
+<div>
+    <p><%= @post.conteudo %></p>
+</div>
+
+<p>
+  <strong>Autor</strong>
+  <%= @post.user.nome %> <%=@post.user.sobrenome%>
+</p>
+
+<%= link_to 'Editar', edit_post_path(@post) %> |
+<%= link_to 'Retornar', posts_path %>
+</div>
+<%=render 'shared/footer'%>

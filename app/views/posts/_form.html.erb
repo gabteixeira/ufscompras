@@ -1,0 +1,30 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Titulo_do_Anúncio %>
+    <%= form.text_field :titulo %>
+  </div>
+  <div class="field">
+  <%= form.label :Categoria%>
+  <%= form.select :categoria, ['Alimento','Roupa','Outros']%>
+  </div>
+  <div class="field">
+    <%= form.label :Conteúdo %>
+    <%= form.text_area :conteudo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
