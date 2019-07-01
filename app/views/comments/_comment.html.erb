@@ -9,13 +9,10 @@
       <div class="panel-footer"> <%= comment.created_at%></div>
        
    
-    <% if comment.user == current_user %>
+    <% if comment.user == current_user ||@post.user == current_user %>
        <%= link_to "Editar", edit_post_comment_path(comment.post,comment)%>
         <%= link_to "Remover comentário", [comment.post,comment], method: :delete%>
     <% end %>
-    <%if @post.user == current_user%>
-          <%= link_to "Remover comentário", [comment.post,comment], method: :delete%>
-    <%end%>
      </div>  
  
    

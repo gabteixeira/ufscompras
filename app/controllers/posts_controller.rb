@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order(:cached_votes_score=>:desc)
+    @posts = Post.all.order(:cached_votes_score => :desc)
   end
 
   # GET /posts/1
@@ -60,7 +60,7 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    @post.upvote_from current_user
+    @post.upvote_from current_user, :vote_scope => 'rank'
     redirect_to post_path
   end
   

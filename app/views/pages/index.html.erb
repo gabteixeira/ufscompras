@@ -18,7 +18,7 @@
      
   <div class="container">
     <h2>Destaques</h2>
-    
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -26,20 +26,25 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
-
-    <!-- Wrapper for slides -->
+    
     <div class="carousel-inner">
+        <%i=0%>
+        <% @posts.order(:cached_votes_score => :desc).each do |post| %>
+        <%if i== 3%>
+          <%break%>
+        <%end%>
+       <%if i==0%> 
       <div class="item active">
-        <!-- <img src="la.jpg" alt="Los Angeles" style="width:100%;"> -->
+       <center><%= image_tag(post.image_url(:index).to_s, alt:post.titulo, size:'500') %><center>
       </div>
-
+      <%end%>
+      <%if i>=1%>
       <div class="item">
-        <!-- <img src="chicago.jpg" alt="Chicago" style="width:100%;"> -->
+       <center><%= image_tag(post.image_url(:index).to_s,alt:post.titulo, size:'500') %></center>
       </div>
-
-      <div class="item">
-        <!-- <img src="ny.jpg" alt="New york" style="width:100%;"> -->
-      </div>
+      <%end%>
+      <%i+=1%>
+   <%end%>
     </div>
 
     <!-- Left and right controls -->

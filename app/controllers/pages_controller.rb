@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @posts = Post.all.order(:created_at=>:desc)
+    @posts = Post.all.order(:cached_votes_score=>:desc)
   end
 end
