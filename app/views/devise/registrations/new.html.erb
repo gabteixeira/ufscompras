@@ -9,6 +9,10 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+    <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
 
   <div class="field">
     <%= f.label :ra %><br />
@@ -19,6 +23,7 @@
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
   </div>
+
 
   <div class="field">
     <%= f.label :sobrenome %><br />

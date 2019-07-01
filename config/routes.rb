@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   devise_for :users 
   get 'pages/index'
   get 'posts', controller:'posts', action:'posts', as: 'newpost'

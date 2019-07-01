@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comments = Comment.where(post_id: @post).order("created_at DESC")
   end
 
   # GET /posts/new
@@ -66,6 +67,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:titulo, :conteudo, :user_id)
+      params.require(:post).permit(:titulo, :conteudo, :user_id,:image,:contato)
     end
 end

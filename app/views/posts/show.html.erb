@@ -4,15 +4,24 @@
 
 <h1><%= @post.titulo %> </h1>
 <div>
+    <p><%= image_tag(@post.image_url(:visao).to_s) %></p>
     <p><%= @post.conteudo %></p>
+    <p><b>Telefone:</b><%= @post.contato %></p>
+    <p><b>Email:</b><%=@post.user.email%></p>
 </div>
 
+
+
 <p>
+  <%= image_tag(@post.user.image_url(:thumb).to_s) %>
   <strong>Autor</strong>
   <%= @post.user.nome %> <%=@post.user.sobrenome%>
 </p>
+<% if @post.user == current_user %>
+  <%= link_to 'Editar', edit_post_path(@post) %> |
+<% end %>
 
-<%= link_to 'Editar', edit_post_path(@post) %> |
 <%= link_to 'Retornar', posts_path %>
 </div>
+<%=render 'comments/comment'%>
 <%=render 'shared/footer'%>

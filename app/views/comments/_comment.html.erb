@@ -1,0 +1,27 @@
+<div class='container text-center'>
+    <h2>Comentários</h2>
+<% @post.comments.each do |comment|%>
+
+    <div class="panel panel-primary class ">
+    <div class="panel-heading"><b> <%= image_tag(comment.user.image_url(:comentario).to_s) %>
+    <%= comment.user.nome%> <%=comment.user.sobrenome%>:</b></div>
+    <div class="panel-body"> <%= comment.content %></div>
+      <div class="panel-footer"> <%= comment.created_at%></div>
+       
+   
+    <% if comment.user == current_user %>
+       <%= link_to "Editar", edit_post_comment_path(comment.post,comment)%>
+        <%= link_to "Remover comentário", [comment.post,comment], method: :delete%>
+    <% end %>
+    <%if @post.user == current_user%>
+          <%= link_to "Remover comentário", [comment.post,comment], method: :delete%>
+    <%end%>
+     </div>  
+ 
+   
+<% end %>
+
+
+    <h3>Comente:</h3>
+    <%=render 'comments/form'%>
+</div>

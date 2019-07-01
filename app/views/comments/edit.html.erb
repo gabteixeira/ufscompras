@@ -1,0 +1,8 @@
+<%=render 'shared/navbar' %>
+
+<%= form_for([@post, @comment]) do |f|%>
+    <%= f.text_area :content%>
+    <%= f.submit%>
+<% end %>
+
+<%=render 'shared/footer' %>

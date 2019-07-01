@@ -1,12 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 gem "custom_error_message"
 gem 'acts_as_votable', '~> 0.12.0'
+gem 'acts_as_commentable'
 gem 'devise'
 gem "wysiwyg-rails"
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

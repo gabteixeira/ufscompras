@@ -19,9 +19,20 @@
   <%= form.label :Categoria%>
   <%= form.select :categoria, ['Alimento','Roupa','Outros']%>
   </div>
+
+  <div class="field">
+    <%= form.label :Imagem %>
+    <%= form.file_field :image %>
+  </div>
+
   <div class="field">
     <%= form.label :Conteúdo %>
     <%= form.text_area :conteudo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Telefone %>
+    <%= form.telephone_field :contato, placeholder: '(xx)-xxxxxxx' %>
   </div>
 
   <div class="actions">
