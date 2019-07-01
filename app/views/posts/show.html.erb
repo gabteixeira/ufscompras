@@ -17,6 +17,8 @@
   <strong>Autor</strong>
   <%= @post.user.nome %> <%=@post.user.sobrenome%>
 </p>
+<%= link_to like_post_path(@post), class:"like", method: :put do%><button type="button" class="btn btn-primary">APOIAR</button><%end%>
+<p><%= @post.get_upvotes.size%> usuários apoiaram</p>
 <% if @post.user == current_user %>
   <%= link_to 'Editar', edit_post_path(@post) %> |
 <% end %>
