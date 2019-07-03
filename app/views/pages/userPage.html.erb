@@ -1,10 +1,35 @@
 <%= render 'shared/navbar' %>
+<div class="container h-100">
+    <div class="text-center">
+        <h1><%=current_user.nome%> <%=current_user.sobrenome%></h1>
+        <h4><%=current_user.email%></h4>
+        <p><%= image_tag(current_user.image_url(:thumb).to_s) %></p>
 
 
+    <table class ="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th class="text-center">Titulo</th>
+      <th class="text-center">Autor</th>
+      <th class="text-center">Opções </th>
+    </tr>
+  </thead>
+
+    <% @posts.each do |post| %>
+      <tr>
+        <%if post.user.email == current_user.email %>
+        <td><%= post.titulo %></td>
+        <td><b><%= post.user.nome %> <%= post.user.sobrenome%></b></td>
+        <td><%= link_to 'Mostrar', post %>
+          <%= link_to 'Editar', edit_post_path(post) %>
+          <%= link_to 'Excluir', post, method: :delete, data: { confirm: 'Você tem certeza?' } %>
+        <% end %></td>
+      </tr>
+    <% end %>
+    </table>
 
 
-
-
-
-
+        <%=link_to 'Alterar dados',  edit_user_registration_path %>
+    </div>
+</div>
 <%= render 'shared/footer' %>

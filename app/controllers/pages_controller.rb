@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   end
 
   def userPage
+    @posts = Post.all.order(:cached_votes_score=>:desc)
   end
 end
