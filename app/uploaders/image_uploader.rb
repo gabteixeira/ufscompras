@@ -33,6 +33,10 @@ class ImageUploader < CarrierWave::Uploader::Base
      process resize_to_fit: [100, 100]
    end
 
+   version :mypage do
+    process resize_to_fit: [120,120]
+   end
+
   version :visao do
     process resize_to_fit: [400, 400]
   end

@@ -6,6 +6,7 @@
 <div>
     <p><%= image_tag(@post.image_url(:visao).to_s) %></p>
     <p><%= @post.conteudo %></p>
+    <p><b>PREÇO:</b><%= @post.preco %></p>
     <p><b>Telefone:</b><%= @post.contato %></p>
     <p><b>Email:</b><%=@post.user.email%></p>
 </div>

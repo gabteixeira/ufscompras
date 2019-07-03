@@ -20,6 +20,11 @@
   <%= form.select(:categoria, options_for_select(["Comida","Roupa","Convite","Outro"]))%>
   </div>
 
+  <div class="field">
+    <%= form.label :Preço %>
+    <%= form.text_field :preco%>
+  </div>
+
  <div class="field">
     <%= form.label :Imagem %>
     <%= form.file_field :image %>

@@ -38,6 +38,7 @@
        <center><%= image_tag(post.image_url(:index).to_s, alt:post.titulo, size:'500',title: post.titulo) %>
                 <div class="carousel-caption d-none d-md-block">
                   <h2><%= link_to post.titulo, post %> </h2>
+                  <h4>R$ <%= post.preco %></h4>
               </div>
        <center>
       </div>

@@ -2,6 +2,7 @@
 <%=render 'shared/navbar'%>
 <div class='container text-center'>
 <h1>Anúncios</h1>
+  <div class="text-center"> <img alt="UFSCompra" class="rounded mx-auto d-block" style="width:600px" src="<%= asset_path 'ufscompra.png' %>"></div><br>
 <p id="notice"><%= notice %></p>
 <button class="btn btn-info"><%= link_to 'Novo anúncio', new_post_path %></button>
 <table class ="table table-hover table-bordered">
@@ -9,6 +10,8 @@
     <tr>
       <th class="text-center">Titulo</th>
       <th class="text-center">Autor</th>
+      <th class="text-center">Categoria</th>
+       <th class="text-center">Preço</th>
       <th class="text-center">Opções </th>
     </tr>
   </thead>
@@ -18,6 +21,8 @@
       <tr>
         <td><%= post.titulo %></td>
         <td><b><%= post.user.nome %> <%= post.user.sobrenome%></b></td>
+        <td><%= post.categoria%></td>
+        <td>R$ <%= post.preco%></td>
         <td><%= link_to 'Mostrar', post %>
         <% if post.user == current_user %>
           <%= link_to 'Editar', edit_post_path(post) %>
