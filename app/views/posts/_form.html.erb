@@ -17,10 +17,10 @@
   </div>
   <div class="field">
   <%= form.label :Categoria%>
-  <%= form.select :categoria, ['Alimento','Roupa','Outros']%>
+  <%= form.select(:categoria, options_for_select(["Comida","Roupa","Convite","Outro"]))%>
   </div>
 
-  <div class="field">
+ <div class="field">
     <%= form.label :Imagem %>
     <%= form.file_field :image %>
   </div>

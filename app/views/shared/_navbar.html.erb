@@ -7,7 +7,7 @@
     </div>
   <li role="presentation"><%=link_to 'Principal Principal', pages_index_path %></li>
     <% if user_signed_in? %>
-        <li role="presentation"> <%= link_to 'Minha conta' %></li>
+        <li role="presentation"> <%= link_to 'Minha conta', usuario_path %></li>
         <li role="presentation"> <%= link_to 'Anúncios', newpost_path %></li>
         <li> <%= link_to 'Logout', destroy_user_session_path,  :method => :delete %></li>
     <% else %>

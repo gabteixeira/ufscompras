@@ -2,6 +2,7 @@
 <%=render 'shared/navbar'%>
 <div class='container text-center'>
 <h1>Anúncios</h1>
+<p id="notice"><%= notice %></p>
 <button class="btn btn-info"><%= link_to 'Novo anúncio', new_post_path %></button>
 <table class ="table table-hover table-bordered">
   <thead>
@@ -22,7 +23,6 @@
           <%= link_to 'Editar', edit_post_path(post) %>
           <%= link_to 'Excluir', post, method: :delete, data: { confirm: 'Você tem certeza?' } %>
         <% end %></td>
-        <p id="notice"><%= notice %></p>
       </tr>
     <% end %>
   </tbody>

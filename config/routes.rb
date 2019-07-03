@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       put "unlike", controller:'posts', action:'downvote'
     end
   end
-  devise_for :users 
+  devise_for :users
+  get 'pages', controller:'pages', action:'userPage', as: 'usuario'
   get 'pages/index'
   get 'posts', controller:'posts', action:'posts', as: 'newpost'
   root to: "pages#index"

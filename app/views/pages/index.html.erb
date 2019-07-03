@@ -35,12 +35,20 @@
         <%end%>
        <%if i==0%> 
       <div class="item active">
-       <center><%= image_tag(post.image_url(:index).to_s, alt:post.titulo, size:'500') %><center>
+       <center><%= image_tag(post.image_url(:index).to_s, alt:post.titulo, size:'500',title: post.titulo) %>
+                <div class="carousel-caption d-none d-md-block">
+                  <h2><%= link_to post.titulo, post %> </h2>
+              </div>
+       <center>
       </div>
       <%end%>
       <%if i>=1%>
       <div class="item">
-       <center><%= image_tag(post.image_url(:index).to_s,alt:post.titulo, size:'500') %></center>
+       <center><%= image_tag(post.image_url(:index).to_s,alt:post.titulo, size:'500',title: post.titulo) %>
+          <div class="carousel-caption d-none d-md-block">
+                  <h2><%= link_to post.titulo, post %></h2>
+              </div>
+       </center>
       </div>
       <%end%>
       <%i+=1%>
