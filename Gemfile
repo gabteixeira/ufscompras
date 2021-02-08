@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick'
 
 gem 'elasticsearch-model'
